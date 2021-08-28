@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Shop{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset ('css/bootstrap.css') }}">
+    {% endblock %}
+    
+    {% block javascripts %}  
+    <script src="{{ asset ('js/bootstrap.bundle.min.js') }} "></script>
+    {% endblock %}
+</head>
+<body>
+{% block header %}
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+    <div >
+            <a href="{{ path('home') }}" class="btn btn-light">
+                Homepage
+            </a>
+            <a href="{{ path('laptop') }}" class="btn btn-light">
+                Manage laptops
+            </a>
+            <a href="{{ path('tablet') }}" class="btn btn-light">
+                Manage Tablets
+            </a>
+            <a href="{{ path('brand') }}" class="btn btn-light">
+                Brands
+            </a>
+            <a href="{{ path('size') }}" class="btn btn-light">
+                Sizes
+            </a>
+        </div>
+        
+    </nav>
+{% endblock %}
+
+{% block body %}{% endblock %}
+</body>
+</html>

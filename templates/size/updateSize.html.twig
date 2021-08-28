@@ -1,0 +1,24 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Update Size{% endblock %}
+
+{% block body %}
+<div class="container-fluid mt-3">
+      <h2 class="text-center mt-5">Update Size</h2>
+      <div class="col-md-6"></div>
+          {{ form_start (form) }}
+              <div class="form-group">
+                  {{ form_label (form.sizeName) }}
+                  {{ form_widget (form.sizeName, {'attr': {'class' : 'form-control'}}) }}
+              </div>
+              <div class="form-group">
+                  {{ form_label (form.sizeDescription) }}
+                  {{ form_widget (form.sizeDescription, {'attr': {'class' : 'form-control'}}) }}
+              </div>
+              <div class="form-group text-center mt-3">
+                  <button class="btn btn-primary btn-lg">Update</button>
+              </div>
+          {{ form_end (form)}}
+  </div>   
+
+{% endblock %}

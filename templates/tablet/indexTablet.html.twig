@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% block title %}List of Tablet in ShopSon{% endblock %}
+{% block body %}
+<div class="container-fluid">
+<a class="btn btn-primary" href="{{ path ('createTablet') }}">Create New Tablet</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Name of Tablet</th>
+            <th scope="col">brand</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for tablet in Tablets %}
+        <tr>
+            <td scope="row">{{ tablet.name }}</td>
+            <td scope="row">{{ tablet.brand }}</td>
+            <td scope="row">{{ tablet.price }}</td>                    
+            
+            <td scope="row"> 
+                <a class="btn btn-info" href="{{ path ( 'detailTablet' , {'id' : tablet.id } ) }}">Detail</a>
+                <a class="btn btn-warning" href="{{ path ( 'updateTablet' , {'id' : tablet.id } ) }}">Update</a>
+                <a class="btn btn-danger" href="{{ path ( 'deleteTablet' , {'id' : tablet.id } ) }}"
+                                          onclick = "return confirm('Are you sure to delete ?')"
+                >Delete</a>
+            </td>
+        </tr> 
+    {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock %}
